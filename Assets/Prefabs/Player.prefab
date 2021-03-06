@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4091081625794132400}
   - component: {fileID: 1188110400284676009}
   - component: {fileID: 6734038004268752612}
+  - component: {fileID: -6314728510555506335}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -67,6 +68,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4c3be184e513f4eaf9c7072cc57ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6314728510555506335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887828992013472451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40012e7d341b4a945b88f87dd5002027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spell1: {fileID: 0}
+  Spell2: {fileID: 0}
+  Spell3: {fileID: 0}
 --- !u!1 &8965742577090274317
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +142,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec43d30865b0e08459d44f41734d5005, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

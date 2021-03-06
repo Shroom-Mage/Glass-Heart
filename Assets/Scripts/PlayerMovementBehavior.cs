@@ -9,14 +9,12 @@ public class PlayerMovementBehavior : MonoBehaviour
     private NavMeshAgent _agent;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         _agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         //Find the direction
         Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         Vector3 direction = input.normalized;
