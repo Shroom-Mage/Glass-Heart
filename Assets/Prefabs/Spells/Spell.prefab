@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cost: 0
-  Damage: 0
   Delay: 0
   CastTime: 0
   Effect: {fileID: 0}

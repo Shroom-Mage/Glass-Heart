@@ -13,7 +13,7 @@ public class SpellBehavior : MonoBehaviour
 
     private bool _activated = false;
     private float _timer = 0.0f;
-    private PlayerCastBehavior _caster = null;
+    private CasterBehavior _caster = null;
 
     // Start is called before the first frame update
     void Start() {
@@ -43,7 +43,7 @@ public class SpellBehavior : MonoBehaviour
         }
     }
 
-    public void Cast(PlayerCastBehavior caster) {
+    public void Cast(CasterBehavior caster) {
         _activated = true;
         _caster = caster;
         _timer = 0.0f;

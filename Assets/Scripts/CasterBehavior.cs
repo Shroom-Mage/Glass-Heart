@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerCastBehavior : MonoBehaviour
+[RequireComponent(typeof(NavMeshAgent))]
+public class CasterBehavior : MonoBehaviour
 {
     public SpellBehavior Spell1;
     public SpellBehavior Spell2;
@@ -18,16 +19,10 @@ public class PlayerCastBehavior : MonoBehaviour
         _agentSpeed = _agent.speed;
     }
 
-    // Update is called once per frame
-    void Update() {
-        if (Spell1 && Input.GetButtonDown("Fire1") && _agent.speed != 0.0f) {
-            StartCast(Spell1);
-        }
-    }
-
     public void StartCast(SpellBehavior spell) {
         _agentSpeed = _agent.speed;
         _agent.speed = 0.0f;
+        _agent.velocity = new Vector3();
         spell.Cast(this);
     }
 
