@@ -2186,17 +2186,21 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 0207441cfde845c4b81938c0a86be7cd, type: 2}
+    - target: {fileID: 8418022036982609017, guid: 2634b0d9b9630fd4299973c5af08d63f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 235d1dcdb07db964594b94fb12454967, type: 2}
     - target: {fileID: 8418022037794790954, guid: 2634b0d9b9630fd4299973c5af08d63f, type: 3}
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 8418022037794790957, guid: 2634b0d9b9630fd4299973c5af08d63f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8418022037794790957, guid: 2634b0d9b9630fd4299973c5af08d63f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.51
+      value: 4.17
       objectReference: {fileID: 0}
     - target: {fileID: 8418022037794790957, guid: 2634b0d9b9630fd4299973c5af08d63f, type: 3}
       propertyPath: m_LocalPosition.y
