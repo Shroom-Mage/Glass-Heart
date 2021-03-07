@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
+      propertyPath: Cost
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: Delay
       value: 0.2
       objectReference: {fileID: 0}
@@ -25,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: SelfShift.z
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: Targets.Array.size
@@ -85,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8423177593477240651, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: m_Name
-      value: FireballSpell
+      value: CausticSpell
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}

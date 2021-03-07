@@ -7,6 +7,13 @@ using UnityEngine.AI;
 [RequireComponent(typeof(CasterBehavior))]
 public class PlayerBehavior : MonoBehaviour
 {
+    public SpellBehavior BasicAttack;
+    public SpellBehavior Spell1;
+    public SpellBehavior Spell2;
+    public SpellBehavior Spell3;
+
+    public bool Broken = false;
+
     public Camera FollowCamera;
     private Vector3 _cameraOffset;
 
@@ -39,16 +46,29 @@ public class PlayerBehavior : MonoBehaviour
         //HardFace(direction);
 
         // Cast spell
-        if (_caster.Spell1 && Input.GetButtonDown("Fire1") && _agent.speed != 0.0f) {
-            _caster.StartCast(_caster.Spell1);
+        if (BasicAttack && Input.GetButtonDown("Jump") && _agent.speed != 0.0f) {
+            _caster.StartCast(BasicAttack);
             HardFace(direction);
         }
-        if (_caster.Spell2 && Input.GetButtonDown("Fire2") && _agent.speed != 0.0f) {
-            _caster.StartCast(_caster.Spell2);
+        if (Spell1 && Input.GetButtonDown("Fire1") && _agent.speed != 0.0f) {
+            if (_caster.Mana <= 0) {
+                Break();
+            }
+            _caster.StartCast(Spell1);
             HardFace(direction);
         }
-        if (_caster.Spell3 && Input.GetButtonDown("Fire3") && _agent.speed != 0.0f) {
-            _caster.StartCast(_caster.Spell3);
+        if (Spell2 && Input.GetButtonDown("Fire2") && _agent.speed != 0.0f) {
+            if (_caster.Mana <= 0) {
+                Break();
+            }
+            _caster.StartCast(Spell2);
+            HardFace(direction);
+        }
+        if (Spell3 && Input.GetButtonDown("Fire3") && _agent.speed != 0.0f) {
+            if (_caster.Mana <= 0) {
+                Break();
+            }
+            _caster.StartCast(Spell3);
             HardFace(direction);
         }
     }
@@ -56,5 +76,11 @@ public class PlayerBehavior : MonoBehaviour
     public void HardFace(Vector3 direction) {
         if (direction.magnitude > 0)
             transform.forward = direction;
+    }
+
+    private void Break() {
+        Debug.Log("BREAK!");
+        Broken = true;
+        _caster.Health = 1.0f;
     }
 }

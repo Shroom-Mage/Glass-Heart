@@ -9,21 +9,14 @@ public class CasterBehavior : MonoBehaviour
     public float Health = 100.0f;
     public float Mana = 100.0f;
 
-    public SpellBehavior Spell1;
-    public SpellBehavior Spell2;
-    public SpellBehavior Spell3;
-
     private float _maxHealth;
     private float _maxMana;
     private float _stun;
 
-    private SpellBehavior _spellCasting;
+    private SpellBehavior _currentSpell;
 
     private NavMeshAgent _agent;
     private float _agentSpeed;
-
-    private void Awake() {
-    }
 
     // Start is called before the first frame update
     private void Start() {
@@ -35,21 +28,22 @@ public class CasterBehavior : MonoBehaviour
 
     private void Update() {
         _stun -= Time.deltaTime;
+        Mathf.Min(Mana + Time.deltaTime, _maxMana);
     }
 
     public void StartCast(SpellBehavior spell) {
         Mana -= spell.Cost;
         _agentSpeed = _agent.speed;
         _agent.speed = 0.0f;
-        _agent.velocity = new Vector3();
+        _agent.velocity = spell.SelfVelocity;
         spell.tag = tag;
         spell.Cast(this);
-        _spellCasting = spell;
+        _currentSpell = spell;
     }
 
     public void EndCast() {
         _agent.speed = _agentSpeed;
-        _spellCasting = null;
+        _currentSpell = null;
     }
 
     public bool IsCasting() {
@@ -63,9 +57,9 @@ public class CasterBehavior : MonoBehaviour
         _stun = stun;
         transform.Translate(knockback, Space.World);
         // Cancel current spell
-        if (_spellCasting) {
-            _spellCasting.Cancel();
-            _spellCasting = null;
+        if (_currentSpell) {
+            _currentSpell.Cancel();
+            _currentSpell = null;
         }
     }
 
