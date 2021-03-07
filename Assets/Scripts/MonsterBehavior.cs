@@ -29,6 +29,7 @@ public class MonsterBehavior : MonoBehaviour
     private NavMeshAgent _agent;
     private CasterBehavior _caster;
     private PlayerBehavior _player;
+    private MonsterYell _yell;
 
     private bool _hasYelled = false;
 
@@ -37,6 +38,7 @@ public class MonsterBehavior : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _caster = GetComponent<CasterBehavior>();
         _player = FindObjectOfType<PlayerBehavior>();
+        _yell = GetComponent<MonsterYell>();
     }
 
     // Update is called once per frame
@@ -117,7 +119,7 @@ public class MonsterBehavior : MonoBehaviour
         Debug.Log("Approaching");
         if (!_hasYelled) {
             _hasYelled = true;
-            // YELL
+            _yell. monsterYell();
         }
         _state = State.Approaching;
     }
