@@ -616,6 +616,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4878137621298363892, guid: 2634b0d9b9630fd4299973c5af08d63f, type: 3}
+      propertyPath: m_enableKerning
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878137621298363892, guid: 2634b0d9b9630fd4299973c5af08d63f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 0207441cfde845c4b81938c0a86be7cd, type: 2}
     - target: {fileID: 8418022037794790954, guid: 2634b0d9b9630fd4299973c5af08d63f, type: 3}
       propertyPath: m_Name
       value: Monster
