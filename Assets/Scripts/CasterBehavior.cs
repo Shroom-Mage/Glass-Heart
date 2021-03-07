@@ -35,7 +35,7 @@ public class CasterBehavior : MonoBehaviour
         Mana -= spell.Cost;
         _agentSpeed = _agent.speed;
         _agent.speed = 0.0f;
-        _agent.velocity = spell.SelfVelocity;
+        _agent.velocity = transform.forward * spell.SelfVelocity;
         spell.tag = tag;
         spell.Cast(this);
         _currentSpell = spell;
