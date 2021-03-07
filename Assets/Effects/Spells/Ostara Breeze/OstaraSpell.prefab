@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: Cooldown
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: SelfVelocity.z
