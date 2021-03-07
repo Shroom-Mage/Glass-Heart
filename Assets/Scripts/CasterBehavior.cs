@@ -15,11 +15,13 @@ public class CasterBehavior : MonoBehaviour
 
     private SpellBehavior _currentSpell;
 
+    private Rigidbody _rb;
     private NavMeshAgent _agent;
     private float _agentSpeed;
 
     // Start is called before the first frame update
     private void Start() {
+        _rb = GetComponent<Rigidbody>();
         _agent = GetComponent<NavMeshAgent>();
         _agentSpeed = _agent.speed;
         _maxHealth = Health;
@@ -28,14 +30,18 @@ public class CasterBehavior : MonoBehaviour
 
     private void Update() {
         _stun -= Time.deltaTime;
-        Mathf.Min(Mana + Time.deltaTime, _maxMana);
+        Mana = Mathf.Min(Mana + 10.0f * Time.deltaTime, _maxMana);
+
+        if (_currentSpell) {
+            transform.Translate(_currentSpell.SelfVelocity * Time.deltaTime, Space.Self);
+        }
     }
 
     public void StartCast(SpellBehavior spell) {
         Mana -= spell.Cost;
         _agentSpeed = _agent.speed;
         _agent.speed = 0.0f;
-        _agent.velocity = transform.forward * spell.SelfVelocity;
+        _agent.velocity = new Vector3();
         spell.tag = tag;
         spell.Cast(this);
         _currentSpell = spell;
@@ -47,7 +53,7 @@ public class CasterBehavior : MonoBehaviour
     }
 
     public bool IsCasting() {
-        return _agent.speed == 0.0f;
+        return _currentSpell;
     }
 
     public void TakeDamage(float damage, float stun, Vector3 knockback) {

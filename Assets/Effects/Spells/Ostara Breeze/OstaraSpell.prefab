@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &528381240986923078
+--- !u!1001 &4965106657718291916
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -12,16 +12,28 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
+      propertyPath: Effect
+      value: 
+      objectReference: {fileID: -8237154917134012188, guid: 6bec82fbc5aebc149afb46b1ccd6a86d, type: 3}
+    - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: CastTime
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
-      propertyPath: SelfVelocity
-      value: 8
+      propertyPath: Cooldown
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: SelfVelocity.z
-      value: 3
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
+      propertyPath: Targets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
+      propertyPath: Targets.Array.data[0].z
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8240949500353238914, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: m_RootOrder
