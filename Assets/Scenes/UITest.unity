@@ -455,6 +455,14 @@ PrefabInstance:
       propertyPath: Spell1
       value: 
       objectReference: {fileID: 1504074303}
+    - target: {fileID: 895203737342704009, guid: 9ef98217b570d6741a5ff26da54999ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 895203737342704009, guid: 9ef98217b570d6741a5ff26da54999ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.82
+      objectReference: {fileID: 0}
     - target: {fileID: 4091081625794132400, guid: 9ef98217b570d6741a5ff26da54999ee, type: 3}
       propertyPath: m_RootOrder
       value: 2

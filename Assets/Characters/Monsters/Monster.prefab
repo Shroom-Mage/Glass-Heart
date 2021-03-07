@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 1613413369140013929}
   - component: {fileID: 2383056611516012862}
   - component: {fileID: 1371165149696599815}
+  - component: {fileID: 7251855046041689747}
   m_Layer: 0
   m_Name: YellCanvas
   m_TagString: Untagged
@@ -151,6 +152,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7251855046041689747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3554734935459911896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e55e0d7533574a43b3d552153b6d84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 0}
 --- !u!1 &4393446719786370104
 GameObject:
   m_ObjectHideFlags: 0
