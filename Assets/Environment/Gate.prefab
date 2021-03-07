@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterGroup: {fileID: 0}
+  Player: {fileID: 0}
