@@ -7,6 +7,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(CasterBehavior))]
 public class PlayerBehavior : MonoBehaviour
 {
+    public bool Broken = false;
+
     public Camera FollowCamera;
     private Vector3 _cameraOffset;
 
@@ -40,6 +42,9 @@ public class PlayerBehavior : MonoBehaviour
 
         // Cast spell
         if (_caster.Spell1 && Input.GetButtonDown("Fire1") && _agent.speed != 0.0f) {
+            if (_caster.Mana <= 0) {
+                Break();
+            }
             _caster.StartCast(_caster.Spell1);
             HardFace(direction);
         }
@@ -56,5 +61,10 @@ public class PlayerBehavior : MonoBehaviour
     public void HardFace(Vector3 direction) {
         if (direction.magnitude > 0)
             transform.forward = direction;
+    }
+
+    private void Break() {
+        Broken = true;
+        _caster.Health = 1.0f;
     }
 }
