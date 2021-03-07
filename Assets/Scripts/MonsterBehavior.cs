@@ -20,6 +20,8 @@ public class MonsterBehavior : MonoBehaviour
     public float AggroRadius = 5.0f;
     public float AttackRadius = 2.5f;
 
+    public SpellBehavior Spell;
+
     private State _state = State.Idling;
     private float _timer = 0.0f;
     private Vector3 _wanderDirection = new Vector3();
@@ -65,14 +67,14 @@ public class MonsterBehavior : MonoBehaviour
     }
 
     private void EnterIdle() {
+        // Stop
+        _agent.destination = transform.position;
         Debug.Log("Idling");
         _timer = 0.0f;
         _state = State.Idling;
     }
 
     private void Idle() {
-        // Stop
-        _agent.destination = transform.position;
 
         // Check state change
         if (!_caster.IsAlive()) {
@@ -146,11 +148,13 @@ public class MonsterBehavior : MonoBehaviour
             EnterApproach();
         } else if (!_caster.IsCasting()) {
             transform.LookAt(_player.transform);
-            _caster.StartCast(_caster.Spell1);
+            _caster.StartCast(Spell);
         }
     }
 
     private void EnterStunned() {
+        // Stop
+        _agent.destination = transform.position;
         Debug.Log("Stunned!");
         _state = State.Stunned;
     }
@@ -164,6 +168,8 @@ public class MonsterBehavior : MonoBehaviour
     }
 
     private void EnterDead() {
+        // Stop
+        _agent.destination = transform.position;
         Debug.Log("Dead!");
         _state = State.Dead;
     }
