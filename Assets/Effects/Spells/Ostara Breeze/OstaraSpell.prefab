@@ -15,6 +15,14 @@ PrefabInstance:
       propertyPath: CastTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
+      propertyPath: SelfVelocity
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
+      propertyPath: SelfVelocity.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8240949500353238914, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: m_RootOrder
       value: 0

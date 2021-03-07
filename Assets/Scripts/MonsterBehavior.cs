@@ -29,12 +29,16 @@ public class MonsterBehavior : MonoBehaviour
     private NavMeshAgent _agent;
     private CasterBehavior _caster;
     private PlayerBehavior _player;
+    private MonsterYell _yell;
+
+    private bool _hasYelled = false;
 
     // Start is called before the first frame update
     void Start() {
         _agent = GetComponent<NavMeshAgent>();
         _caster = GetComponent<CasterBehavior>();
         _player = FindObjectOfType<PlayerBehavior>();
+        _yell = GetComponent<MonsterYell>();
     }
 
     // Update is called once per frame
@@ -113,6 +117,10 @@ public class MonsterBehavior : MonoBehaviour
 
     private void EnterApproach() {
         Debug.Log("Approaching");
+        if (!_hasYelled) {
+            _hasYelled = true;
+            _yell. monsterYell();
+        }
         _state = State.Approaching;
     }
 
@@ -127,8 +135,6 @@ public class MonsterBehavior : MonoBehaviour
             EnterStunned();
         } else if (DistanceToPlayer() <= AttackRadius) {
             EnterAttack();
-        } else if (DistanceToPlayer() >= AggroRadius * 2.0f) {
-            EnterIdle();
         }
     }
 
