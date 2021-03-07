@@ -624,7 +624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59225cb7d6a87b4a9744e5ec678e752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yellBox: {fileID: 0}
+  yellBox: {fileID: 1664840339764050552}
   yellSentence: {fileID: 0}
   lines: {fileID: 11400000, guid: b6066abcf96820e4ab9d57b98d49ff88, type: 2}
   lineToYell: 
+  fadeCount: 0
