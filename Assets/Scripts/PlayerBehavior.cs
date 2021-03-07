@@ -12,13 +12,18 @@ public class PlayerBehavior : MonoBehaviour
     public SpellBehavior Spell2;
     public SpellBehavior Spell3;
 
+    public GameObject WitchForm;
+    public GameObject BreakForm;
+
     public bool Broken = false;
+    private float _unbrokenHealth = 100.0f;
 
     public Camera FollowCamera;
     private Vector3 _cameraOffset;
 
     private NavMeshAgent _agent;
     private CasterBehavior _caster;
+    private Animator[] _animators;
 
     // Start is called before the first frame update
     void Start() {
@@ -27,6 +32,7 @@ public class PlayerBehavior : MonoBehaviour
         }
         _agent = GetComponent<NavMeshAgent>();
         _caster = GetComponent<CasterBehavior>();
+        _animators = GetComponentsInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -68,6 +74,13 @@ public class PlayerBehavior : MonoBehaviour
             _caster.StartCast(Spell3);
             HardFace(direction);
         }
+
+        //Animations
+        foreach (Animator animator in _animators) {
+            animator.SetFloat("Motion", _agent.velocity.magnitude / _agent.speed);
+            animator.SetBool("Attacking", _caster.IsCasting());
+            animator.SetBool("Broken", Broken);
+        }
     }
 
     public void HardFace(Vector3 direction) {
@@ -75,9 +88,20 @@ public class PlayerBehavior : MonoBehaviour
             transform.forward = direction;
     }
 
-    private void Break() {
+    public void Break() {
         Debug.Log("BREAK!");
         Broken = true;
+        _unbrokenHealth = _caster.Health;
         _caster.Health = 1.0f;
+        WitchForm.SetActive(false);
+        BreakForm.SetActive(true);
+    }
+
+    public void Unbreak() {
+        Debug.Log("Unbreak");
+        Broken = false;
+        _caster.Health = _unbrokenHealth;
+        WitchForm.SetActive(true);
+        BreakForm.SetActive(false);
     }
 }

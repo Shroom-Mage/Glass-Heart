@@ -3,7 +3,17 @@ guid: 112e11147237b224e9b7d98d2b4c3fec
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassWings_mat
+    second: {fileID: 2100000, guid: 0fce599893c10f44d8ef849f9ad4eb97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Purple
+    second: {fileID: 2100000, guid: 2abb821a8f2cdea4baafad2924fe0fde, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -94,7 +104,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
