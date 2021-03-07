@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4566270835151007633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -108,9 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c1f586ede5f8e4f923e5ad1d1afba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 0
-  Stun: 0
-  Knockback: 0
+  Damage: 2
+  Stun: 0.2
+  Knockback: 1
   Duration: 1
   EndOnCollision: 0
   Velocity: {x: 0, y: 0, z: 0}

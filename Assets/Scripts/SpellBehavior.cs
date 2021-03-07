@@ -22,15 +22,14 @@ public class SpellBehavior : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        _timer += Time.deltaTime;
-
         //The effect has activated
         if (_activated && _timer >= Delay) {
             foreach (Vector3 target in Targets) {
                 //Create a spell effect at the caster's position
                 //offset by the target, at the caster's rotation
                 transform.localPosition += target;
-                Instantiate(Effect, transform.position, _caster.transform.rotation);
+                SpellEffectBehavior spellEffect = Instantiate(Effect, transform.position, _caster.transform.rotation);
+                spellEffect.tag = tag;
             }
             transform.localPosition = new Vector3();
             _activated = false;
@@ -38,14 +37,23 @@ public class SpellBehavior : MonoBehaviour
         //The caster has finished casting
         if (_caster && _timer >= CastTime) {
             _caster.transform.Translate(SelfShift, Space.Self);
-            _caster.EndCast(this);
+            _caster.EndCast();
             _caster = null;
         }
+
+        _timer += Time.deltaTime;
     }
 
     public void Cast(CasterBehavior caster) {
         _activated = true;
         _caster = caster;
         _timer = 0.0f;
+    }
+
+    public void Cancel() {
+        Debug.Log("Spell cancelled!");
+        _activated = false;
+        _caster.EndCast();
+        _caster = null;
     }
 }

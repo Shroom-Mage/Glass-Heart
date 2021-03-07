@@ -35,14 +35,17 @@ public class SpellEffectBehavior : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("Hit!");
-        MonsterBehavior monster = other.gameObject.GetComponent<MonsterBehavior>();
-
-        monster.transform.Translate(transform.forward * Knockback);
-
-        // Destroy self if needed
-        if (EndOnCollision) {
-            Destroy(gameObject);
+        if (other.tag != tag) {
+            Debug.Log("Hit");
+            CasterBehavior target = other.GetComponentInParent<CasterBehavior>();
+            if (target) {
+                // Damage the target
+                target.TakeDamage(Damage, Stun, transform.forward * Knockback);
+                // Destroy self if needed
+                if (EndOnCollision) {
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 }

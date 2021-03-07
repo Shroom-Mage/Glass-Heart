@@ -9,13 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4091081625794132400}
+  - component: {fileID: 3858198660692222851}
   - component: {fileID: 37903856237486245}
   - component: {fileID: 1188110400284676009}
   - component: {fileID: 6734038004268752612}
   - component: {fileID: -6314728510555506335}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +36,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &3858198660692222851
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887828992013472451}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &37903856237486245
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -61,7 +76,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 1200
@@ -85,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4c3be184e513f4eaf9c7072cc57ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FollowCamera: {fileID: 0}
 --- !u!114 &-6314728510555506335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40012e7d341b4a945b88f87dd5002027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 100
+  Mana: 100
   Spell1: {fileID: 0}
   Spell2: {fileID: 0}
   Spell3: {fileID: 0}
