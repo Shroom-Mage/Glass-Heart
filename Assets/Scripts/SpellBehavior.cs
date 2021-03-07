@@ -9,7 +9,7 @@ public class SpellBehavior : MonoBehaviour
     public float CastTime = 0.0f;
     public SpellEffectBehavior Effect;
     public List<Vector3> Targets;
-    public Vector3 SelfVelocity = new Vector3();
+    public float SelfVelocity = 0.0f;
     public Vector3 SelfShift = new Vector3();
 
     private bool _activated = false;
