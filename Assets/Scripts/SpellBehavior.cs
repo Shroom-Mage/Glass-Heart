@@ -7,9 +7,10 @@ public class SpellBehavior : MonoBehaviour
     public float Cost = 0.0f;
     public float Delay = 0.0f;
     public float CastTime = 0.0f;
+    public float Cooldown = 0.0f;
     public SpellEffectBehavior Effect;
     public List<Vector3> Targets;
-    public float SelfVelocity = 0.0f;
+    public Vector3 SelfVelocity = new Vector3();
     public Vector3 SelfShift = new Vector3();
 
     private bool _activated = false;
@@ -56,5 +57,9 @@ public class SpellBehavior : MonoBehaviour
         _activated = false;
         _caster.EndCast();
         _caster = null;
+    }
+
+    public bool OnCooldown() {
+        return _timer < Cooldown;
     }
 }

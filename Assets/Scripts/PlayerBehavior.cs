@@ -46,25 +46,22 @@ public class PlayerBehavior : MonoBehaviour
         //HardFace(direction);
 
         // Cast spell
-        if (BasicAttack && Input.GetButtonDown("Jump") && _agent.speed != 0.0f) {
+        if (BasicAttack && Input.GetButtonDown("Jump") && !_caster.IsCasting() && !BasicAttack.OnCooldown()) {
             _caster.StartCast(BasicAttack);
             HardFace(direction);
-        }
-        if (Spell1 && Input.GetButtonDown("Fire1") && _agent.speed != 0.0f) {
+        } else if (Spell1 && Input.GetButtonDown("Fire1") && !_caster.IsCasting() && !Spell1.OnCooldown()) {
             if (_caster.Mana <= 0) {
                 Break();
             }
             _caster.StartCast(Spell1);
             HardFace(direction);
-        }
-        if (Spell2 && Input.GetButtonDown("Fire2") && _agent.speed != 0.0f) {
+        } else if (Spell2 && Input.GetButtonDown("Fire2") && !_caster.IsCasting() && !Spell2.OnCooldown()) {
             if (_caster.Mana <= 0) {
                 Break();
             }
             _caster.StartCast(Spell2);
             HardFace(direction);
-        }
-        if (Spell3 && Input.GetButtonDown("Fire3") && _agent.speed != 0.0f) {
+        } else if (Spell3 && Input.GetButtonDown("Fire3") && !_caster.IsCasting() && !Spell3.OnCooldown()) {
             if (_caster.Mana <= 0) {
                 Break();
             }
