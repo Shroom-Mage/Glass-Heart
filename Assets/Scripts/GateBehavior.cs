@@ -5,6 +5,7 @@ using UnityEngine;
 public class GateBehavior : MonoBehaviour
 {
     public GameObject MonsterGroup;
+    public PlayerBehavior Player;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class GateBehavior : MonoBehaviour
     void Update()
     {
         if (!MonsterGroup.GetComponentInChildren<MonsterBehavior>()) {
+            Player.Unbreak();
             Destroy(gameObject);
         }
     }
