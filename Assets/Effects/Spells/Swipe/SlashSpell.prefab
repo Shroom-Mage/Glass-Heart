@@ -8,12 +8,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
+      propertyPath: Delay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: Effect
       value: 
       objectReference: {fileID: 5161127884122930781, guid: d0372a6893dd39d4796d4eb59c47eecb, type: 3}
     - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: CastTime
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: -6481883955716390129, guid: 72c5b4aa841d599439046b0017cfc18d, type: 3}
       propertyPath: Targets.Array.size

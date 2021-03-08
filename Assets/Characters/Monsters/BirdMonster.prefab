@@ -1,5 +1,73 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6447749530992526909
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1686837378240181433}
+    m_Modifications:
+    - target: {fileID: 3028784942326958472, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028784942326958472, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028784942326958472, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028784942326958472, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028784942326958472, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028784942326958472, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028784942326958472, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028784942326958472, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028784942326958472, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028784942326958472, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028784942326958472, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220354484092930369, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+      propertyPath: m_Name
+      value: SlashSpell
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+--- !u!114 &2820773819713018680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9105826347014888709, guid: 409e6f36514d19845ab328d389a9eeb1, type: 3}
+  m_PrefabInstance: {fileID: 6447749530992526909}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7699b0809d68444949547795625a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7186069185715268244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,6 +75,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8418022037794790953, guid: 2634b0d9b9630fd4299973c5af08d63f, type: 3}
+      propertyPath: Spell
+      value: 
+      objectReference: {fileID: 2820773819713018680}
     - target: {fileID: 8418022037794790954, guid: 2634b0d9b9630fd4299973c5af08d63f, type: 3}
       propertyPath: m_Name
       value: BirdMonster
